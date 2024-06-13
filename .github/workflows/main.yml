@@ -20,3 +20,7 @@ jobs:
       - run: go build
       - run: |
           [ -z "$(go fmt)" ] || exit 1
+      - uses: golangci/golangci-lint-action@v6
+        with:
+          version: latest
+          args: --timeout=10m
